@@ -22,12 +22,14 @@ def home():
         date = request.form["start"]
         etat = request.form["etat"]
         graphique = request.form["graphique"]
+        return redirect(url_for("perso", nm = famille, dt = date, et = etat, grh = graphique))
     else:
         return render_template("index.html", famille = cursor )
 
-@app.route("/<name>")
-def perso(name):
-    return render_template("index.html", name = name)
+@app.route("/<nm>")
+def perso(nm, dt, et, grh):
+    return f"<p>salut<p>"
+    #return render_template("test.html", name = nm)
 
 if __name__ == "__main__":
     app.run()
