@@ -3,7 +3,8 @@ body {
     padding: 10px;
     background-color: #cccc;
   }
-  h1  {
+  
+h1  {
     text-transform: uppercase; 
     letter-spacing: 2px;
     font-size: 3rem;
@@ -16,17 +17,19 @@ body {
     transform: translate(-50%, -50%);
     top: 0.2px;
     }
-  .cowimage {
+  
+.cowimage {
     background: url(browncows.jpg) no-repeat center; 
     background-size: cover;
     height: 500px;
-    
     position: relative;
   }
-  .case {
+  
+.case {
     align-items: center;
   }
-    .case > div {
+    
+.case > div {
     background-color:firebrick;
     border: 1px;
     color:white;
@@ -38,16 +41,15 @@ body {
     position: relative;
   }
 
-  .date {
+.date {
     font-size: 10px;
   }
 
-  .entrer {
+.entrer {
     text-align: center;
   }
 
-  .submit {
-  
+.submit {
   font-size: 10px;
   top: 3px;
   padding: 10px 32px;
