@@ -1,0 +1,56 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    background-color: #cccc;
+  }
+  h1  {
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    font-size: 3rem;
+    color: brown;
+    text-align: center;
+    font-weight: extra bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 0.2px;
+    }
+  .cowimage {
+    background: url(browncows.jpg) no-repeat center; 
+    background-size: cover;
+    height: 500px;
+    
+    position: relative;
+  }
+  .case {
+    align-items: center;
+  }
+    .case > div {
+    background-color:firebrick;
+    border: 1px;
+    color:white;
+    margin: 25px 250px 50px 250px;
+    padding: 25px 20px 10px 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .date {
+    font-size: 10px;
+  }
+
+  .entrer {
+    text-align: center;
+  }
+
+  .submit {
+  
+  font-size: 10px;
+  top: 3px;
+  padding: 10px 32px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  }
