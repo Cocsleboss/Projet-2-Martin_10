@@ -19,7 +19,7 @@ h1  {
     }
   
 .cowimage {
-    background: url(browncows.jpg) no-repeat center; 
+    background: url(template/images/browncows.jpg) no-repeat center; 
     background-size: cover;
     height: 500px;
     position: relative;
