@@ -20,15 +20,15 @@ def home():
 def login():
     return render_template("index.html")
 
-
-@app.route("/graph", methods =["POST", "GET"])
-def graph(nm, dt, et, grh):
+@app.route("/test", methods =["POST", "GET"])
+def test():
+    
     if request.method =="POST":
         famille = request.form["famille"]
         date = request.form["date"]
         etat = request.form["etat"]
         graphique = request.form["graphique"]
-    return f"<h1>{usr}</h1>"
+        return f"<p>hello {famille}  {date}  {etat}  {graphique}</p>"
 
 if __name__ == "__main__":
     app.run(debug = True)
