@@ -5,14 +5,14 @@
     <head>
         <meta Charest="utf-8">
         <title>Ferme des 3 chênes</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/templates/css/style.css">
     </head>
 
     <body>
       <div class="cowimage"></div>
       <h1> LA FERME DES 3 CHÊNES</h1>
           
-      <form action="{{url_for('graph', nm = famille, dt = date, et = etat, grh = graphique)}}" method="POST" class="form-example">
+      <form action="{{url_for("test")}}" method="POST" class="form-example">
         <div class="case">
           <div class="ndf">
               <label for="famille">Nom de famille:</label>
