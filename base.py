@@ -1,7 +1,7 @@
 import sqlite3
-import flask
+from flask import Flask, redirect, url_for, render_template, request
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 def db_connection():
     conn = None
@@ -11,34 +11,6 @@ def db_connection():
         print(e)
     return conn
 
-<<<<<<< Updated upstream
-
-@app.route("/", methods=('GET','POST'))
-def home():
-    conn = db_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT nom FROM familles")  #defini une liste des noms de familles
-    all_fam = cursor.fetchall()
-
-    if flask.request.method == 'POST':
-        famille = flask.request.form["famille"]
-
-        print(famille)
-
-    return flask.render_template("index.html" , familles=all_fam)
-
-    if true:
-        cursor.execute("SELECT id FROM animaux WHERE famille_id IN (SELECT id FROM familles WHERE nom LIKE 'Lila')".format())
-
-
-@app.route("/<name>")
-def perso(name):
-    return flask.render_template("index.html", oui="oui")
-
-if __name__ == "__main__":
-    app.run()
-
-=======
 @app.route("/")
 def home():
     if request.method =="POST":
@@ -60,4 +32,3 @@ def graph(nm, dt, et, grh):
 
 if __name__ == "__main__":
     app.run(debug = True)
->>>>>>> Stashed changes
