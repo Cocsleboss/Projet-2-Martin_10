@@ -11,17 +11,16 @@ def db_connection():
         print(e)
     return conn
 
-@app.route("/")
-def home():
-    if request.method =="POST":
-        return render_template("index.html")
+@app.route("/", methods=["POST", "GET"])
+def home(): 
+    return render_template("index.html")
 
-@app.route("/login", methods=["POST", "GET"])
+@app.route("/login", , methods=["POST", "GET"])
 def login():
     return render_template("index.html")
 
 @app.route("/test", methods =["POST", "GET"])
-def test():
+def graph():
     
     if request.method =="POST":
         famille = request.form["famille"]
