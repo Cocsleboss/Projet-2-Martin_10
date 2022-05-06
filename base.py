@@ -11,6 +11,7 @@ def db_connection():
         print(e)
     return conn
 
+<<<<<<< Updated upstream
 
 @app.route("/", methods=('GET','POST'))
 def home():
@@ -37,3 +38,26 @@ def perso(name):
 if __name__ == "__main__":
     app.run()
 
+=======
+@app.route("/")
+def home():
+    if request.method =="POST":
+        return render_template("index.html")
+
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    return render_template("index.html")
+
+
+@app.route("/graph", methods =["POST", "GET"])
+def graph(nm, dt, et, grh):
+    if request.method =="POST":
+        famille = request.form["famille"]
+        date = request.form["date"]
+        etat = request.form["etat"]
+        graphique = request.form["graphique"]
+    return f"<h1>{usr}</h1>"
+
+if __name__ == "__main__":
+    app.run(debug = True)
+>>>>>>> Stashed changes
