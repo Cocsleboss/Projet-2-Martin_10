@@ -1,7 +1,7 @@
 import sqlite3
-from flask import Flask, redirect, url_for, render_template, request
+import flask
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 def db_connection():
     conn = None
@@ -12,24 +12,27 @@ def db_connection():
     return conn
 
 
-@app.route("/", methods=["POST", "GET"])
+@app.route("/", methods=('GET','POST'))
 def home():
     conn = db_connection()
     cursor = conn.cursor()
-   # cursor = conn.execute("SELECT nom FROM familles")  #defini une liste des noms de familles
-    if request.method =="POST":
-        famille = request.form["famille"]
-        date = request.form["start"]
-        etat = request.form["etat"]
-        graphique = request.form["graphique"]
-        return redirect(url_for("perso", nm = famille, dt = date, et = etat, grh = graphique))
-    else:
-        return render_template("index.html", famille = cursor )
+    cursor.execute("SELECT nom FROM familles")  #defini une liste des noms de familles
+    all_fam = cursor.fetchall()
 
-@app.route("/<nm>")
-def perso(nm, dt, et, grh):
-    return f"<p>salut<p>"
-    #return render_template("test.html", name = nm)
+    if flask.request.method == 'POST':
+        famille = flask.request.form["famille"]
+
+        print(famille)
+
+    return flask.render_template("index.html" , familles=all_fam)
+
+    if true:
+        cursor.execute("SELECT id FROM animaux WHERE famille_id IN (SELECT id FROM familles WHERE nom LIKE 'Lila')".format())
+
+
+@app.route("/<name>")
+def perso(name):
+    return flask.render_template("index.html", oui="oui")
 
 if __name__ == "__main__":
     app.run()
