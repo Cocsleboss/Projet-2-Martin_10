@@ -12,7 +12,7 @@
       <div class="cowimage"></div>
       <h1> LA FERME DES 3 CHÊNES</h1>
           
-      <form action="#" method="post" class="form-example">
+      <form action="{{url_for('login')}}" method="POST" class="form-example">
         <div class="case">
           <div class="ndf">
               <label for="famille">Nom de famille:</label>
@@ -28,7 +28,7 @@
           <div class="date">
               <label for="date">Date de naissance:</label>
 
-          <input type="date" id="start" name="trip-start"
+          <input type="date" id="start" name="date"
           value="01-01-22"
           min="1933-01-01" max="2022-04-02"><br><br>   
           </div>
@@ -44,7 +44,7 @@
 
           <div class="graph">
               <label for="Graphique">Graphique:</label>
-              <select name="Graphique" id="graphique">
+              <select name="graphique" id="graphique">
                 <option value="circulaire">Circulaire</option>
                 <option value="batonnet">Batonnets</option>
               </select><br><br>
