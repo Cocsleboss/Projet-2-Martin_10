@@ -12,14 +12,14 @@ def db_connection():
     return conn
 
 @app.route("/", methods=["POST", "GET"])
-def home(): 
+def home():
     return render_template("index.html")
 
-@app.route("/login", , methods=["POST", "GET"])
+@app.route("/login", methods=["POST", "GET"])
 def login():
     return render_template("index.html")
 
-@app.route("/test", methods =["POST", "GET"])
+@app.route("/graph", methods =["POST", "GET"])
 def graph():
     
     if request.method =="POST":
@@ -27,7 +27,7 @@ def graph():
         date = request.form["date"]
         etat = request.form["etat"]
         graphique = request.form["graphique"]
-        return f"<p>hello {famille}  {date}  {etat}  {graphique}</p>"
+        return render_template("graph.html")
 
 if __name__ == "__main__":
     app.run(debug = True)
