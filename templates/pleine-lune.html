@@ -1,1 +1,33 @@
-h
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+        <title>Vaches nées sous pleine lune</title>
+    </head>
+
+    <body> 
+
+        <canvas id="plein_lune_graphique"></canvas>
+
+        <script>
+            var ctx = document.getElementById('pleine_lune_graphique').getContext('2d');
+            var myChart2 = new Chart(ctx, {
+            type: 'pie',   // le type du graphique
+            data: {        // les données
+                labels: ['pleine lune','hors pleine lune'],
+                 datasets: [{
+                   label: 'Vaches nées sous pleine lune',
+                   data: {{ vache_naissance | safe }},
+                   backgroundColor: [  
+                    'rgb(255, 0, 0)',
+                    'rgb(0, 205, 255)',
+                    ],
+                    hoverOffset:1
+                }]
+            },
+        }
+    );
+        </script>
+    </body>
+</html>
