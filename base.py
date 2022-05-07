@@ -27,7 +27,7 @@ def graph():
         date = request.form["date"]
         etat = request.form["etat"]
         graphique = request.form["graphique"]
-        return render_template("graph.html")
+        return render_template("velages.html")
 
 if __name__ == "__main__":
     app.run(debug = True)
