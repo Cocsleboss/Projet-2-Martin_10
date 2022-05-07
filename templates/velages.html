@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="utf-8">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js%22%3E</script>
-        <title>Nombres de vêlages</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+        <title>Un graphique avec des velages</title>
     </head>
+
     <body> 
+        <form>
+            <H1><u>En {{ results[0] }} {{ results[1] }} il y a eu {{ results[2] }} velages</u></H1> 
+            <input class="retour" type="submit" value="Retour">
+        </form>
+
         <canvas id="graphique" width="200px" height="200px"></canvas>
+
         <script>
             var ctx = document.getElementById('graphique').getContext('2d');
             var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: {{id_date_velage | safe}},
+                labels: {{ mois_annee | safe }},
                 datasets: [{
-                    label: 'Dates auxquels un velage a eu lieu',
-                    data: {{id_date_velage | safe}},
+                    label: 'Nombre de velage',
+                    data: {{ nombre_velage | safe }},
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)'
+                        'rgba(255, 99, 132, 0.2)',
                     ],
                     borderColor: [
-                        'rgb(255, 99, 132)'
+                        'rgb(255, 99, 132)',
                     ],
-                    borderWidth:3
+                    borderWidth: 1
                 }]
             },
         }
@@ -30,4 +38,3 @@
         </script>
     </body>
 </html>
-
