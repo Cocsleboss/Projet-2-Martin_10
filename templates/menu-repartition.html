@@ -14,16 +14,16 @@
             <div id="wrap">
                 <ul class="menu">
                     <li>
-                        <a href="fd3c.html">Home</a>
+                        <a href="{{ url_for('login')}}">Home</a>
                     </li>
                     <li>
-                        <a href="menu-velage.html" target="_blank">Vêlages</a>   
+                        <a href="{{ url_for('velage')}}" target="_blank">Vêlages</a>   
                     </li>
                     <li>
-                        <a href="menu-pl.html" target="_blank">Pleine lune</a>
+                        <a href="{{ url_for('pl')}}" target="_blank">Pleine lune</a>
                     </li>
                     <li>
-                        <a href="menu-repartition.html" target="_blank">Répartition</a>
+                        <a href="{{ url_for('rep')}}" target="_blank">Répartition</a>
                     </li>    
             </div>
         </form>
