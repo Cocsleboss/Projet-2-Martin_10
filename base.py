@@ -19,15 +19,27 @@ def home():
 def login():
     return render_template("index.html")
 
-@app.route("/graph", methods =["POST", "GET"])
-def graph():
+@app.route("/GraphV", methods =["POST", "GET"])
+def GraphV():
     
     if request.method =="POST":
-    #    famille = request.form["famille"]
-     #   date = request.form["date"]
+        famille = request.form["famille"]
+        date = request.form["date"]
       #  etat = request.form["etat"]
        # graphique = request.form["graphique"]
-        return render_template("velages.html")
+        #return render_template("velages.html")
+        return f"<p>cest bon {famille}</p>"
+
+@app.route("/GraphPL", methods =["POST", "GET"])
+def GraphPL():
+    
+    if request.method =="POST":
+        famille = request.form["famille"]
+        année = request.form["annee"]
+        mois = request.form["mois"]
+       # graphique = request.form["graphique"]
+        #return render_template("velages.html")
+        return f"<p>cest bon {famille}  {année} {mois}</p>"
 
 @app.route("/velage", methods =["POST", "GET"])
 def velage():
