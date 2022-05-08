@@ -31,14 +31,13 @@
     
     
     <!--Menu au dessus de la page-->
-        <form action="{{url_for("graph")}}" method="POST" class="form-example">
+        <form action="{{url_for("GraphV")}}" method="POST" class="form-example">
             <div class="case">
                 <div class="Periode">
                     <label for="Période">Choisissez une periode:</label>
                 
-                    <input type="Mois" id="start" name="start"
-                    value="1910-01"
-                    min="1910-01" max="2022-05">
+                    <input type="Mois" id="date" name="date"
+                    value="ex : 1910-01">
                    <br><br> 
                 </div>
                 
