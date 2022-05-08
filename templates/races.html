@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <title>Répartition des races</title>
+</head>
 
-    <head>
-        <meta Charest="utf-8">
-        <title>vachouilette</title>
-        <style>
-            h1 {
-                color: rgb(0, 0, 200);
-            }  
+<body> 
+    <input class="retour" type="submit" value="Retour">
 
-            h2 {
-                color: rgb(89, 216, 63)
+    <canvas id="races-graphique" width="200px" height="200px"></canvas>
+    
+    <script>
+
+        var ctx = document.getElementById("races-graphique").getContext('2d');
+        var deathChart = new Chart(ctx, {
+            type: 'pie',
+            data:{
+                labels: {{ races | safe }},
+                datasets: [{
+                    data: {{ vaches_races | safe }},
+                    backgroundColor: [
+                    'rgb(0, 205, 255)',
+                    'rgb(255, 0, 0)',
+                    'rgb(34, 255, 0)'
+                    ],
+                    hoverOffset: 4
+                ]
             }
-            
-            body {
-                background-color: rgb(120, 106, 245)
-            }        
-            </style>
-    </head>
+        }
+    }
+    );
+</script>
 
-    <body>
-        <h1> La ferme des 3 Chênesc</h1>
-        <em>
-            <p>Vous cherchez un vache de famille : </p><br>
-            <p>{{name}}</p>
-        </em>
-        
-    </body>
-</html>
+</body>    
+                    
