@@ -5,7 +5,7 @@
     <head>
         <meta Charest="utf-8">
         <title>Velages</title>
-        <link rel="stylesheet" type="text/css" href="{{ url for('static',filename='style.css)}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
     </head>
 
     <body>
@@ -14,16 +14,16 @@
             <div id="wrap">
                 <ul class="menu">
                     <li>
-                        <a href="fd3c.html">Home</a>
+                        <a href="{{ url_for('login')}}">Home</a>
                     </li>
                     <li>
-                        <a href="menu-velage.html" target="_blank">Vêlages</a>   
+                        <a href="{{ url_for('velage')}}" target="_blank">Vêlages</a>   
                     </li>
                     <li>
-                        <a href="menu-pl.html" target="_blank">Pleine lune</a>
+                        <a href="{{ url_for('pl')}}" target="_blank">Pleine lune</a>
                     </li>
                     <li>
-                        <a href="menu-repartition.html" target="_blank">Répartition</a>
+                        <a href="{{ url_for('rep')}}" target="_blank">Répartition</a>
                     </li>    
             </div>
         </form>
@@ -31,7 +31,7 @@
     
     
     <!--Menu au dessus de la page-->
-        <form action="{{url_for('login')}}" method="POST" class="form-example">
+        <form action="{{url_for("graph")}}" method="POST" class="form-example">
             <div class="case">
                 <div class="Periode">
                     <label for="Période">Choisissez une periode:</label>
@@ -50,10 +50,7 @@
                         <option value="rigatoni">Rigatoni</option>
                         <option value="dave">Dave</option>
                         <option value="pumpernickel">Pumpernickel</option>
-                        <option value="reeses">Reeses</option>qq
-                        {{for x in famille:}}
-                            <option value="{{x}}">{{x}}</option>
-                        {{endfor}}
+                        <option value="reeses">Reeses</option>
                     </select><br><br>   
                 </div>
                 
