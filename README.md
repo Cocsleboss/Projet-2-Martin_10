@@ -1,4 +1,4 @@
-Ceci est le depotdu projet 2 en informatique du groupe 22_P2_Martin_10
+Ceci est le depot du projet 2 en informatique du groupe 22_P2_Martin_10
 
 voici la structure du dossier:
 
