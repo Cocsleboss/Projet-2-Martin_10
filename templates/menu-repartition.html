@@ -5,7 +5,7 @@
     <head>
         <meta Charest="utf-8">
         <title>Repartition</title>
-        <link rel="stylesheet" type="text/css" href="{{ url for('static',filename='style.css)}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
     </head>
 
     <body>
@@ -38,10 +38,7 @@
                         <option value="rigatoni">Rigatoni</option>
                         <option value="dave">Dave</option>
                         <option value="pumpernickel">Pumpernickel</option>
-                        <option value="reeses">Reeses</option>qq
-                        {{for x in famille:}}
-                            <option value="{{x}}">{{x}}</option>
-                        {{endfor}}
+                        <option value="reeses">Reeses</option>
                     
                     <input type="number" id="pourcentage1" name="pourcentage2" 
                     value="0"
@@ -55,10 +52,7 @@
                         <option value="rigatoni">Rigatoni</option>
                         <option value="dave">Dave</option>
                         <option value="pumpernickel">Pumpernickel</option>
-                        <option value="reeses">Reeses</option>qq
-                        {{for x in famille:}}
-                            <option value="{{x}}">{{x}}</option>
-                        {{endfor}}
+                        <option value="reeses">Reeses</option>
                     
                     <input type="number" id="pourcentage2" name="pourcentage2" 
                     value="0"
@@ -72,10 +66,7 @@
                         <option value="rigatoni">Rigatoni</option>
                         <option value="dave">Dave</option>
                         <option value="pumpernickel">Pumpernickel</option>
-                        <option value="reeses">Reeses</option>qq
-                        {{for x in famille:}}
-                            <option value="{{x}}">{{x}}</option>
-                        {{endfor}}
+                        <option value="reeses">Reeses</option>
                     
                     <input type="number" id="pourcentage3" name="pourcentage3" 
                     value="0"
@@ -91,3 +82,4 @@
         </form>
         
     </body>
+</html>
