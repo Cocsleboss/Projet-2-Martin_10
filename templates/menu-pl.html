@@ -30,14 +30,13 @@
      
 
     <!--Critère d'affichage-->
-        <form action="{{url_for('login')}}" method="POST" class="form-example">
+        <form action="{{url_for('GraphPL')}}" method="POST" class="form-example">
             <div class="case">
                 <div class="Année">
                     <label for="annee">Choisissez une année:</label>
                 
-                    <input type="annee" id="start" name="start"
-                    value="1900"
-                    min="1900" max="2022">
+                    <input type="annee" id="annee" name="annee"
+                    value="1900">
                     <br><br> 
                 </div>    
                 
@@ -65,7 +64,7 @@
                         <option value="rigatoni">Rigatoni</option>
                         <option value="dave">Dave</option>
                         <option value="pumpernickel">Pumpernickel</option>
-                        <option value="reeses">Reeses</option>qq
+                        <option value="reeses">Reeses</option>
                     </select><br><br>
                 </div>
                 
