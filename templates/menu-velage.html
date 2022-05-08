@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <meta Charest="utf-8">
+        <title>Velages</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+    <!--Menu au dessus de la page-->
+        <form action="">
+            <div id="wrap">
+                <ul class="menu">
+                    <li>
+                        <a href="fd3c.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="menu-velage.html" target="_blank">Vêlages</a>   
+                    </li>
+                    <li>
+                        <a href="menu-pl.html" target="_blank">Pleine lune</a>
+                    </li>
+                    <li>
+                        <a href="menu-repartition.html" target="_blank">Répartition</a>
+                    </li>    
+            </div>
+        </form>
+    
+    
+    
+    <!--Menu au dessus de la page-->
+        <form action="{{url_for('login')}}" method="POST" class="form-example">
+            <div class="case">
+                <div class="Periode">
+                    <label for="Période">Choisissez une periode:</label>
+                
+                    <input type="Mois" id="start" name="start"
+                    value="1910-01"
+                    min="1910-01" max="2022-05">
+                   <br><br> 
+                </div>
+                
+                <div class="famille">
+                    <label for="famille">Choisissez une famille:</label>
+    
+                    <select name="famille" id="famille">
+                        <option value="">Aucun</option>
+                        <option value="rigatoni">Rigatoni</option>
+                        <option value="dave">Dave</option>
+                        <option value="pumpernickel">Pumpernickel</option>
+                        <option value="reeses">Reeses</option>qq
+                        {{for x in famille:}}
+                            <option value="{{x}}">{{x}}</option>
+                        {{endfor}}
+                    </select><br><br>   
+                </div>
+                
+                
+            </div>
+            <div class="entrer">
+                <button type="submit" onclick="velages.html" >Afficher</button>
+            </div>           
+        </form>
+    </body>
+    

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <meta Charest="utf-8">
+        <title>Pleine Lune</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+    <!--Menu au dessus de la page-->
+        <form action="">
+            <div id="wrap">
+                <ul class="menu">
+                    <li>
+                        <a href="fd3c.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="menu-velage.html" target="_blank">Vêlages</a>   
+                    </li>
+                    <li>
+                        <a href="menu-pl.html" target="_blank">Pleine lune</a>
+                    </li>
+                    <li>
+                        <a href="menu-repartition.html" target="_blank">Répartition</a>
+                    </li>    
+            </div>
+        </form>
+     
+
+    <!--Critère d'affichage-->
+        <form action="{{url_for('login')}}" method="POST" class="form-example">
+            <div class="case">
+                <div class="Année">
+                    <label for="annee">Choisissez une année:</label>
+                
+                    <input type="annee" id="start" name="start"
+                    value="1900"
+                    min="1900" max="2022">
+                    <br><br> 
+                </div>    
+                
+                <div class=""Mois>
+                    <label for="mois">Choisissez un mois:</label>
+                    <select name="mois" id="mois">
+                        <option value="">Aucun</option>
+                        <option value="Janvier">Janvier</option>
+                        <option value="Fevrier">Fevrier</option>
+                        <option value="Mars">Mars</option>
+                        <option value="Avril">Avril</option>
+                        <option value="Mai">Mai</option>
+                        <option value="Juin">Juin</option>
+                        <option value="Juillet">Juillet</option>
+                        <option value="Aout">Aout</option>
+                        <option value="Septembre">Septembre</option>
+                        <option value="Octombre">Octobre</option>
+                        <option value="Novembre">Novembre</option>
+                        <option value="Decembre">Decembre</option>
+                    </select><br><br> 
+                </div>
+                    
+                <div class="famille">
+                    <select name="famille" id="famille">
+                        <option value="rigatoni">Rigatoni</option>
+                        <option value="dave">Dave</option>
+                        <option value="pumpernickel">Pumpernickel</option>
+                        <option value="reeses">Reeses</option>qq
+                        {{for x in famille:}}
+                            <option value="{{x}}">{{x}}</option>
+                        {{endfor}}
+                    </select><br><br>
+                </div>
+                
+            </div>
+            <div class="entrer">
+                <button type="submit"  onclick="pleine-lunes.html">Afficher</button>
+            </div>
+        </form>               
+                
+    </body>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <meta Charest="utf-8">
+        <title>Repartition</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+    <!--Menu au dessus de la page-->
+        <form action="">
+            <div id="wrap">
+                <ul class="menu">
+                    <li>
+                        <a href="fd3c.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="menu-velage.html" target="_blank">Vêlages</a>   
+                    </li>
+                    <li>
+                        <a href="menu-pl.html" target="_blank">Pleine lune</a>
+                    </li>
+                    <li>
+                        <a href="menu-repartition.html" target="_blank">Répartition</a>
+                    </li>    
+            </div>
+        </form>
+    
+    
+    <!--Menu au dessus de la page-->
+        <form action="{{url_for('login')}}" method="POST" class="form-example">
+            <div class="case">
+                <div class="famille">
+                    <label for="famille pourcentage1">Choisissez une famille 1 et son %</label>
+                    <select name="famille1" id="famille1">
+                        <option value="rigatoni">Rigatoni</option>
+                        <option value="dave">Dave</option>
+                        <option value="pumpernickel">Pumpernickel</option>
+                        <option value="reeses">Reeses</option>qq
+                        {{for x in famille:}}
+                            <option value="{{x}}">{{x}}</option>
+                        {{endfor}}
+                    
+                    <input type="number" id="pourcentage1" name="pourcentage2" 
+                    value="0"
+                    min="0" max="100">
+                    <br><br> 
+                </div>
+    
+                <div class="famille">
+                    <label for="famille pourcentage2">Choisissez une famille 2 et son %</label>
+                    <select name="famille2" id="famille2">
+                        <option value="rigatoni">Rigatoni</option>
+                        <option value="dave">Dave</option>
+                        <option value="pumpernickel">Pumpernickel</option>
+                        <option value="reeses">Reeses</option>qq
+                        {{for x in famille:}}
+                            <option value="{{x}}">{{x}}</option>
+                        {{endfor}}
+                    
+                    <input type="number" id="pourcentage2" name="pourcentage2" 
+                    value="0"
+                    min="0" max="100">
+                    <br><br> 
+                </div>
+    
+                <div class="famille">
+                    <label for="famille pourcentage3">Choisissez une famille 3 et son %</label>
+                    <select name="famille3" id="famille3">
+                        <option value="rigatoni">Rigatoni</option>
+                        <option value="dave">Dave</option>
+                        <option value="pumpernickel">Pumpernickel</option>
+                        <option value="reeses">Reeses</option>qq
+                        {{for x in famille:}}
+                            <option value="{{x}}">{{x}}</option>
+                        {{endfor}}
+                    
+                    <input type="number" id="pourcentage3" name="pourcentage3" 
+                    value="0"
+                    min="0" max="100">
+                    <br><br> 
+                </div>
+    
+            </div> 
+            <div class="entrer">
+                <button type="submit" onclick="races.html">Afficher</button>
+            </div>
+                    
+        </form>
+        
+    </body>
