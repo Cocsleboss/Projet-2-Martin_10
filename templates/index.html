@@ -9,52 +9,37 @@
     </head>
 
     <body>
-      <div class="cowimage"></div>
-      <h1> LA FERME DES 3 CHÊNES</h1>
-          
-      <form action="{{url_for("graph")}}" method="POST" class="form-example">
-        <div class="case">
-          <div class="ndf">
-              <label for="famille">Nom de famille:</label>
-          
-              <select name="famille" id="famille">
-                <option value="rigatoni">Rigatoni</option>
-                <option value="dave">Dave</option>
-                <option value="pumpernickel">Pumpernickel</option>
-                <option value="reeses">Reeses</option>
-          </select><br><br>
-          </div>
-
-          <div class="date">
-              <label for="date">Date de naissance:</label>
-
-          <input type="date" id="start" name="date"
-          value="01-01-22"
-          min="1933-01-01" max="2023-04-02"><br><br>   
-          </div>
-
-          <div class="etat">
-              <label for="etat">Etat de la vache:</label>
-              <select name="etat" id="etat">
-                <option value="morte">Mort</option>
-                <option value="ne">Ne</option>
-                <option value="autre">autre</option>
-              </select><br><br> 
-          </div>
-
-          <div class="graph">
-              <label for="Graphique">Graphique:</label>
-              <select name="graphique" id="graphique">
-                <option value="circulaire">Circulaire</option>
-                <option value="batonnet">Batonnets</option>
-              </select><br><br>
-          </div>
-        </div>
-          <div class="entrer">
-            <p><input type="submit" value="submit"/></p>
-          </div>
+    <!--Menu au dessus de la page-->
+        <form action="" >
+            <div id="wrap">
+                <ul class="menu">
+                    <li>
+                        <a href="fd3c.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="menu-velage.html" target="_blank">Vêlages</a>   
+                    </li>
+                    <li>
+                        <a href="menu-pl.html" target="_blank">Pleine lune</a>
+                    </li>
+                    <li>
+                        <a href="menu-repartition.html" target="_blank">Répartition</a>
+                    </li>    
+            </div>
+        </form>
+    <!--Image couverture-->     
+        <div class ="cowimage"></div>
+        <h1>
+            LA FERME DES 3 CHÊNES
+        </h1>
+    
+    <!--Texte de description-->    
+        <h2>
+            Bienvenue à la ferme des 3 chênes, ici vous pourrez retrouver toutes les infos nécessaires sur vos vaches préférées. <br>
+            Notre menu interactif vous permet d'affiner vos recherche. Bonne visite !
+        </h2>
+    
         
-      </form>     
-       
+                
     </body>
-</html>
+
