@@ -41,6 +41,17 @@ def GraphPL():
         #return render_template("velages.html")
         return f"<p>cest bon {famille}  {année} {mois}</p>"
 
+@app.route("/GraphR", methods =["POST", "GET"])
+def GraphR():
+    
+    if request.method =="POST":
+        #famille = request.form["famille"]
+        #année = request.form["annee"]
+        #mois = request.form["mois"]
+       # graphique = request.form["graphique"]
+        #return render_template("velages.html")
+        return f"<p>cest bon</p>"
+
 @app.route("/velage", methods =["POST", "GET"])
 def velage():
     return render_template("menu-velage.html")
@@ -52,5 +63,7 @@ def pl():
 @app.route("/rep", methods =["POST", "GET"])
 def rep():
     return render_template("menu-repartition.html")
+
+
 if __name__ == "__main__":
     app.run(debug = True)
