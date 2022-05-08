@@ -23,11 +23,22 @@ def login():
 def graph():
     
     if request.method =="POST":
-        famille = request.form["famille"]
-        date = request.form["date"]
-        etat = request.form["etat"]
-        graphique = request.form["graphique"]
+    #    famille = request.form["famille"]
+     #   date = request.form["date"]
+      #  etat = request.form["etat"]
+       # graphique = request.form["graphique"]
         return render_template("velages.html")
 
+@app.route("/velage", methods =["POST", "GET"])
+def velage():
+    return render_template("menu-velage.html")
+
+@app.route("/pl", methods =["POST", "GET"])
+def pl():
+    return render_template("menu-pl.html")
+
+@app.route("/rep", methods =["POST", "GET"])
+def rep():
+    return render_template("menu-repartition.html")
 if __name__ == "__main__":
     app.run(debug = True)
