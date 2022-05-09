@@ -29,18 +29,22 @@ def GraphV():
         annee = request.form["an"]
         mois = request.form["mois"]
         if mois == "None":
-            mois = "%%"
+            mois = "__"
         if famille == "":
             truc = f"SELECT date FROM velages WHERE date LIKE '__/{mois}/{annee}'"
             res = cursor.execute(truc)
             res = res.fetchall()
-            return f"voila {res}"
+            nombre = len(res)
+            return render_template("velages.html", mois = mois, annee = annee, nombre_velage = nombre)
+            
         
         if famille != "":
             truc = f"SELECT date FROM velages WHERE date LIKE '%%/{mois}/{annee}' AND id IN(SELECT velage_id FROM animaux_velages WHERE animal_id IN (SELECT id FROM animaux WHERE famille_id = (SELECT id FROM familles WHERE nom == '{famille}')))"
             res = cursor.execute(truc)
             res = res.fetchall()
-            return f"voila {res}"
+            nombre = len(res)
+            return render_template("velages.html", mois = mois, annee = annee, nombre_velage = nombre)
+            #return f"voila {res}"
 
 
 @app.route("/GraphPL", methods =["POST", "GET"])
