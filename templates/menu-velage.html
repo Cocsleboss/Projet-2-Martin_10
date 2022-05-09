@@ -35,19 +35,27 @@
         <form action="{{url_for("GraphV")}}" method="POST" class="form-example">
             <div class="case">
                 <div class="Periode">
-                    <label for="Période">Choisissez une periode:</label>
+                    <label for="Période">Choisissez une année:</label>
                 
-                    <input type="Mois" id="date" name="date"
-                    value="ex : 1910-01">
+                    <input type="Mois" id="date" name="an"
+                    value="ex : 1910">
+                   <br><br> 
+                </div>
+
+                <div class="Periode">
+                    <label for="Période">Choisissez un mois (facultatif):</label>
+                
+                    <input type="Mois" id="date" name="mois"
+                    value="None">
                    <br><br> 
                 </div>
                 
                 <div class="famille">
-                    <label for="famille">Choisissez une famille:</label>
+                    <label for="famille">Choisissez une famille (facultattif):</label>
     
                     <select name="famille" id="famille">
                         <option value="">Aucun</option>
-                        <option value="rigatoni">Rigatoni</option>
+                        <option value="Galak">Galak</option>
                         <option value="dave">Dave</option>
                         <option value="pumpernickel">Pumpernickel</option>
                         <option value="reeses">Reeses</option>
