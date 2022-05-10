@@ -5,20 +5,25 @@
         <meta charset="utf-8">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
         <title>Un graphique avec des velages</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
         <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>
     </head>
 
     <body> 
+        <h2><u>Graphique des velages {{ annee }} ({{ velage }} naissances)</u></h2>
         <form action = "{{url_for("velage")}}">
-            <H1><u>Le {{ mois }} {{ annee }} il y a eu {{ velage }} velages</u></H1> 
             <input class="retour" type="submit" value="Retour">
         </form>
 
-        <canvas id="graphique" width="200px" height="200px"></canvas>
+        <br><br><br><br>
+        <br><br><br><br>
+        
+        <div style="text-align: center;"> <!-- Deuxième Canvas: graphe en style bar -->
+            <canvas id="V_graph" width="900" height="600"></canvas>
+        </div>
 
         <script>
-            var ctx = document.getElementById('graphique').getContext('2d');
-            var myChart = new Chart(ctx, {
+            new Chart("V_graph", {
             type: 'bar',
             data: {
                 labels: {{ mois_annee | safe }},
@@ -34,6 +39,9 @@
                     borderWidth: 1
                 }]
             },
+            options: {
+                responsive : false
+            }
         }
             )
         </script>
