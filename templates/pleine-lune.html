@@ -4,16 +4,23 @@
         <meta charset="utf-8">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
         <title>Vaches nées sous pleine lune</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
         <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>
     </head>
 
     <body>
-        <form action = "{{url_for("pl")}}">
-            <H1><u>Le {{ mois }} {{ annee }} il y a eu {{ velage }} velages</u></H1> 
+        <br>
+        <h2><u>Graphique des naissances en pleine-lune {{ annee }} ({{ velage }} naissances)</u></h2>
+        <form action = "{{url_for("pl")}}"> 
             <input class="retour" type="submit" value="Retour">
         </form>
-
-        <canvas id="pl_graph" style="width:100%;max-width:600px"></canvas>></canvas>
+        
+        <br><br><br><br>
+        <br><br><br><br>
+        
+        <div style="text-align: center;"> <!-- Deuxième Canvas: graphe en style bar -->
+            <canvas id="pl_graph" width="600" height="600"></canvas>
+        </div>
 
         <script>
             
@@ -28,8 +35,11 @@
                     data: {{ vache_naissance | safe }},
                     backgroundColor: barColors,
                 }]
-                
-            },
+                },
+            options: {
+                responsive : false
+            }
+            
         });
         </script>
     </body>
