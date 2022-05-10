@@ -67,7 +67,7 @@ def GraphV():
                 labels.append(key)
                 data.append(value)                
 
-            return render_template("velages.html", test = test, mois_annee = labels, nombre_velage = data, mois = mois, annee = annee, velage = nombre)
+            return render_template("velages.html", mois_annee = labels, nombre_velage = data, mois = mois, annee = annee, velage = nombre)
             
 
 
