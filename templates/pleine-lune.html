@@ -4,30 +4,33 @@
         <meta charset="utf-8">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
         <title>Vaches nées sous pleine lune</title>
+        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>
     </head>
 
-    <body> 
+    <body>
+        <form action = "{{url_for("pl")}}">
+            <H1><u>Le {{ mois }} {{ annee }} il y a eu {{ velage }} velages</u></H1> 
+            <input class="retour" type="submit" value="Retour">
+        </form>
 
-        <canvas id="plein_lune_graphique"></canvas>
+        <canvas id="pl_graph" style="width:100%;max-width:600px"></canvas>></canvas>
 
         <script>
-            var ctx = document.getElementById('pleine_lune_graphique').getContext('2d');
-            var myChart2 = new Chart(ctx, {
+            
+            var barColors = ["#b91d47", "#00aba9"];
+
+            new Chart("pl_graph", {
             type: 'pie',   // le type du graphique
             data: {        // les données
                 labels: ['pleine lune','hors pleine lune'],
-                 datasets: [{
-                   label: 'Vaches nées sous pleine lune',
-                   data: {{ vache_naissance | safe }},
-                   backgroundColor: [  
-                    'rgb(255, 0, 0)',
-                    'rgb(0, 205, 255)',
-                    ],
-                    hoverOffset:1
+                datasets: [{
+                    
+                    data: {{ vache_naissance | safe }},
+                    backgroundColor: barColors,
                 }]
+                
             },
-        }
-    );
+        });
         </script>
     </body>
 </html>
