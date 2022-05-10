@@ -52,8 +52,30 @@ def GraphV():
             truc = f"SELECT date FROM velages WHERE date LIKE '%%/{mois}/{annee}' AND id IN(SELECT velage_id FROM animaux_velages WHERE animal_id IN (SELECT id FROM animaux WHERE famille_id = (SELECT id FROM familles WHERE nom == '{famille}')))"
             res = cursor.execute(truc)
             res = res.fetchall()
+            for i in range(len(res)):
+                res[i]= res[i][0]
             nombre = len(res)
-            return render_template("velages.html", mois = mois, annee = annee, nombre_velage = nombre)
+
+            mois_annee = res
+            dict = {}
+            labels = []
+            data = []
+            print(res)
+            for i in range(len(res)):
+                if res[i] not in dict :
+                    dict[res[i]] = 1
+                else:
+                    dict[res[i]] += 1
+            for key, value in dict.items():
+                labels.append(key)
+                data.append(value)                
+
+            return render_template("velages.html", test = test, mois_annee = labels, nombre_velage = data, mois = mois, annee = annee, velage = nombre)
+            
+            #res = cursor.execute(truc)
+            #res = res.fetchall()
+            #nombre = len(res)
+            #return render_template("velages.html", mois = mois, annee = annee, nombre_velage = nombre)
             #return f"voila {res}"
 
 
