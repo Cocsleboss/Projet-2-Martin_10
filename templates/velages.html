@@ -5,11 +5,12 @@
         <meta charset="utf-8">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
         <title>Un graphique avec des velages</title>
+        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>
     </head>
 
     <body> 
-        <form>
-            <H1><u>Le {{ mois }} {{ annee }} il y a eu {{ nombre_velage }} velages</u></H1> 
+        <form action = "{{url_for("velage")}}">
+            <H1><u>Le {{ mois }} {{ annee }} il y a eu {{ velage }} velages</u></H1> 
             <input class="retour" type="submit" value="Retour">
         </form>
 
