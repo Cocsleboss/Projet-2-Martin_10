@@ -43,7 +43,7 @@ def GraphV():
                 labels.append(key)
                 data.append(value)                
 
-            return render_template("velages.html", test = test, mois_annee = labels, nombre_velage = data, mois = mois, annee = annee, velage = nombre) #redirige vers "velages.html" avec toutes les variables definies"
+            return render_template("velages.html", mois_annee = labels, nombre_velage = data, mois = mois, annee = annee, velage = nombre) #redirige vers "velages.html" avec toutes les variables definies"
             
         
         if famille != "None":   #si l'utilisateur a choisit une famille on execute cette requete SQL
