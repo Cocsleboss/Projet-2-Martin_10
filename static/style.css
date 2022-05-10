@@ -12,13 +12,28 @@ h1  {
     text-align: center;
     font-weight: extra bold;
     position: absolute;
-    top: 15%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    top: 0.2px;
+    }
+  
+h2  {
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    font-size: 2rem;
+    color: brown);
+    text-align: center;
+    font-weight: extra bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 90px;
     }
   
 .cowimage {
-    background: url(../images/browncows.jpg) no-repeat center; 
+    background: url(browncows.jpg) no-repeat center; 
     background-size: cover;
     height: 500px;
     position: relative;
@@ -38,7 +53,6 @@ h1  {
     font-size: 1rem;
     border-radius: 10px;
     position: relative;
-    top: 150px;
   }
 
 .date {
@@ -47,54 +61,12 @@ h1  {
 
 .entrer {
     text-align: center;
-    background-color: transparent;
-    position: relative;
-    top: 180px;
   }
 
-
-  h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    background-color: slategrey;
-    color: white;
-    padding: 10px 10px;
-    border: 1px black;
-    font-size: 1rem;
-}
-#wrap {
-    width: 100%;
-    height: 56px;
-    margin: 0;
-    position: relative;
-    background-color: firebrick;
-    color: white;
-}
-.menu {
-    height: 56px;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-}
-.menu li {
-    height: auto;
-    width: 135.8px;
-    float: left;
-    text-align: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: firebrick;
-      }
-
-.menu a {
-    padding: 18px 0;
-    border-left: 1px solid #ccc9c9;
-    text-decoration: none;
-    color: white;
-    display: block;
-
-}
-.menu li:hover {
-    background-color: rgb(112, 25, 25);
-}
+.submit {
+  font-size: 10px;
+  top: 3px;
+  padding: 10px 32px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  }
