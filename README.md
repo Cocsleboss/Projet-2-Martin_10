@@ -23,3 +23,7 @@ Une fois arrivé sur le site, vous verrez la page d'acceuil avec en haut a gauch
 -Vêlages où vous devrez choisir les informations que vous désirez pour afficher un graphique montrant les vêlages par jour sur la période choisie (avec possibilité de choisir une famille)
 -PleineLune où vous devrez choisir les informations que vous désirez pour afficher un graphique montrant les vaches nées sous pleine lune et les vaches nées hors pleine lune sur la période choisie (avec possibilité de choisir une famille)
 -Répartition où vous devrez choisir les races et les pourcentages minimum pour afficher un graphique montrant le nombre de vaches étant x% choisit ou plus d'une certaine race. --> Pour ce graphique nous avons rencontrés quelques soucis et nous n'avons donc pas pu terminer ce graphique à temps. Nous pouvons quand même essayer de le résoudre avant le jour de la présentation (Vendredi 13 mai au matin).
+
+Voila le lien GitHub du projet:
+
+https://github.com/Cocsleboss/Projet-2-Martin_10
