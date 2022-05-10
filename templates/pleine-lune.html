@@ -2,42 +2,42 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> <!-- se connecte a chart.js via internet -->
         <title>Vaches nées sous pleine lune</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
-        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">  <!-- se connecte au css-->
+        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>      <!-- affiche une petite image (icone) dans l'onglet -->
     </head>
 
     <body>
         <br>
-        <h2><u>Graphique des naissances en pleine-lune {{ annee }} ({{ velage }} naissances)</u></h2>
-        <form action = "{{url_for("pl")}}"> 
+        <h2><u>Graphique des naissances en pleine-lune {{ annee }} ({{ velage }} naissances)</u></h2> <!-- affiche il s'agit du graph de quelle année et montre le nombre total de velage sur cette periode-->
+        <form action = "{{url_for("pl")}}">     <!-- bouton retou qui redirige vers la page "menu-pl.html"-->
             <input class="retour" type="submit" value="Retour">
         </form>
         
         <br><br><br><br>
         <br><br><br><br>
         
-        <div style="text-align: center;"> <!-- Deuxième Canvas: graphe en style bar -->
-            <canvas id="pl_graph" width="600" height="600"></canvas>
+        <div style="text-align: center;"> 
+            <canvas id="pl_graph" width="600" height="600"></canvas>    <!-- defini un canvas et ses dimensions pour afficher le graph -->
         </div>
 
         <script>
             
-            var barColors = ["#b91d47", "#00aba9"];
+            var barColors = ["#b91d47", "#00aba9"]; // defini les couleur utiliser pour le graph
 
             new Chart("pl_graph", {
             type: 'pie',   // le type du graphique
             data: {        // les données
-                labels: ['pleine lune','hors pleine lune'],
+                labels: ['pleine lune','hors pleine lune'], 
                 datasets: [{
                     
-                    data: {{ vache_naissance | safe }},
+                    data: {{ vache_naissance | safe }}, // valeur des données
                     backgroundColor: barColors,
                 }]
                 },
             options: {
-                responsive : false
+                responsive : false // empeche le graph de changer de taille
             }
             
         });
