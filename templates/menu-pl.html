@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <h1>Pleines-lunes</h1>
     <!--Menu au dessus de la page-->
         <form action="">
             <div id="wrap">
@@ -26,7 +27,7 @@
                     <li>
                         <a href="{{ url_for('rep')}}" target="_blank">Répartition</a>
                     </li>    
-            </div>
+            </div> 
         </form>
      
 
@@ -34,38 +35,202 @@
         <form action="{{url_for('GraphPL')}}" method="POST" class="form-example">
             <div class="case">
                 <div class="Année">
-                    <label for="annee">Choisissez une année:</label>
-                
-                    <input type="annee" id="annee" name="annee"
-                    value="1900">
+                    <label for="Année">Choisissez une année:</label>
+                    
+                    <input type="number" id="an" name="an" 
+                    value="2000"
+                    min="1990" max="2020">
                     <br><br> 
                 </div>    
                 
                 <div class=""Mois>
                     <label for="mois">Choisissez un mois:</label>
                     <select name="mois" id="mois">
-                        <option value="">Aucun</option>
-                        <option value="Janvier">Janvier</option>
-                        <option value="Fevrier">Fevrier</option>
-                        <option value="Mars">Mars</option>
-                        <option value="Avril">Avril</option>
-                        <option value="Mai">Mai</option>
-                        <option value="Juin">Juin</option>
-                        <option value="Juillet">Juillet</option>
-                        <option value="Aout">Aout</option>
-                        <option value="Septembre">Septembre</option>
-                        <option value="Octombre">Octobre</option>
-                        <option value="Novembre">Novembre</option>
-                        <option value="Decembre">Decembre</option>
+                        <option value="None">Aucun</option>
+                        <option value="01">Janvier</option>
+                        <option value="02">Fevrier</option>
+                        <option value="03">Mars</option>
+                        <option value="04">Avril</option>
+                        <option value="05">Mai</option>
+                        <option value="06">Juin</option>
+                        <option value="07">Juillet</option>
+                        <option value="08">Aout</option>
+                        <option value="09">Septembre</option>
+                        <option value="10">Octobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Decembre</option>
                     </select><br><br> 
                 </div>
                     
                 <div class="famille">
+                    <label for="famille">Choisissez une famille (facultattif):</label>
                     <select name="famille" id="famille">
-                        <option value="rigatoni">Rigatoni</option>
-                        <option value="dave">Dave</option>
-                        <option value="pumpernickel">Pumpernickel</option>
-                        <option value="reeses">Reeses</option>
+                        <option value="None">Aucun</option>
+                        <option value="Galak">Galak</option>
+                        <option value="Réglisse">Réglisse</option>
+                        <option value="Myrtille">Myrtille</option>
+                        <option value="Vincent">Vincent</option>
+                        <option value="Panade">Panade</option>
+                        <option value="Rubarbe">Rubarbe</option>
+                        <option value="Bimbo">Bimbo</option>
+                        <option value="Nostalgie">Nostalgie</option>
+                        <option value="Nubia">Nubia</option>
+                        <option value="Margot">Margot</option>
+                        <option value="Nourrice">Nourrice</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Olympe">Olympe</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Cote d'Or">Cote d’Or</option>
+                        <option value="Sorbet">Sorbet</option>
+                        <option value="Aupiette">aupiette</option>
+                        <option value="Nounou">Nounou</option>
+                        <option value="Odile">Odile</option>
+                        <option value="Oasis">Oasis</option>
+                        <option value="Potache">Potache</option>
+                        <option value="Nash">Nash</option>
+                        <option value="Mirabelle">Mirabelle</option>
+                        <option value="Pascaline">Pascaline</option>
+                        <option value="Renaud">Renaud</option>
+                        <option value="Neslie">Neslie</option>
+                        <option value="Ayham">Ayham</option>
+                        <option value="Minnie">Minnie</option>
+                        <option value="Narcisse">Narcisse</option>
+                        <option value="Maserati">Maserati</option>
+                        <option value="Origami">Origami</option>
+                        <option value="Paula">Paula</option>
+                        <option value="Mamamia">Mamamia</option>
+                        <option value="Peluche">Peluche</option>
+                        <option value="Nima">Nima</option>
+                        <option value="Clarabelle">Clarabelle</option>
+                        <option value="Onyx">Onyx</option>
+                        <option value="Papyrus">Papyrus</option>
+                        <option value="Nancy">Nancy</option>
+                        <option value="Mushroom">Mushroom</option>
+                        <option value="Nassama">Nassma</option>
+                        <option value="Ferraris">Ferraris</option>
+                        <option value="Madona">Madona</option>
+                        <option value="Jonquille">Jonquille</option>
+                        <option value="Citron">Citron</option>
+                        <option value="Pissenlit">Pissenlit</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Météorite">Météorite</option>
+                        <option value="Saturne">Saturne</option>
+                        <option value="Madi">Madi</option>
+                        <option value="Moon">Moon</option>
+                        <option value="Meringue">Meringue</option>
+                        <option value="Ovalie">Ovalie</option>
+                        <option value="Oreo">Oreo</option>
+                        <option value="Majestic">Majestic</option>
+                        <option value="Bessie">Bessie</option>
+                        <option value="Micheline">Micheline</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Mastar">Mastar</option>
+                        <option value="Ciboulette">Ciboulette</option>
+                        <option value="Motorola">Motorola</option>
+                        <option value="Plume">Plume</option>
+                        <option value="Panda">Panda</option>
+                        <option value="Agapanthe">Agapanthe</option>
+                        <option value="Nitendo">Nitendo</option>
+                        <option value="Provence">Provence</option>
+                        <option value="Céline">Céline</option>
+                        <option value="Perle">Perle</option>
+                        <option value="Nora">Nora</option>
+                        <option value="Moka">Moka</option>
+                        <option value="Poire">Poire</option>
+                        <option value="Olive">Olive</option>
+                        <option value="Pomme">Pomme</option>
+                        <option value="Ophélie">Ophélie</option>
+                        <option value="Norma">Norma</option>
+                        <option value="Lindt">Lindt</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Trompette">Trompette</option>
+                        <option value="Ocarina">Ocarina</option>
+                        <option value="Oméga">Oméga</option>
+                        <option value="Betty">Betty</option>
+                        <option value="Pupuce">Pupuce</option>
+                        <option value="Pamela">Pamela</option>
+                        <option value="Blondie">Blondie</option>
+                        <option value="Citroenne">Citroenne</option>
+                        <option value="Nya"> Nya</option>
+                        <option value="Ninon">Ninon</option>
+                        <option value="Mélasse">Mélasse</option>
+                        <option value="Nolvenn">Nolvenn</option>
+                        <option value="Orage">Orage</option>
+                        <option value="KitKat">KitKat</option>
+                        <option value="Moussaka">Moussaka</option>
+                        <option value="">Summer</option>
+                        <option value="Nice">Nice</option>
+                        <option value="Tournesol">Tournesol</option>
+                        <option value="Noisette">Noisette</option>
+                        <option value="Ophia">Ophia</option>
+                        <option value="Paquerette">Paquerette</option>
+                        <option value="Banane">Banane</option>
+                        <option value="Mida">Midas</option>
+                        <option value="Ninette">Ninette</option>
+                        <option value="Mystic">Mystic</option>
+                        <option value="Caprice">Caprice</option>
+                        <option value="Dottie">Dottie</option>
+                        <option value="Origan">Origan</option>
+                        <option value="Mimosa">Mimosa</option>
+                        <option value="Ollande">Ollande</option>
+                        <option value="Naomi">Naomi</option>
+                        <option value="Snow">Snow</option>
+                        <option value="Starv">Starv</option>
+                        <option value="Numerobis">Numerobis</option>
+                        <option value="Mosaic">Mosaic</option>
+                        <option value="Nuggets">Nuggets</option>
+                        <option value="Sonette">Sonette</option>
+                        <option value="Kinde">Kinder</option>
+                        <option value="Lotus">Lotus</option>
+                        <option value="Nadine">Nadine</option>
+                        <option value="Benoît">Benoît</option>
+                        <option value="Orchidée">Orchidée</option>
+                        <option value="Okaly">Okaly</option>
+                        <option value="Malaisie">Malaisie</option>
+                        <option value="Milka">Milka</option>
+                        <option value="Nela">Nela</option>
+                        <option value="Penny">Penny</option>
+                        <option value="Rustique">Rustique</option>
+                        <option value="Fraise">Fraise</option>
+                        <option value="Normande">Normande</option>
+                        <option value="Blanche">Blanche</option>
+                        <option value="Moutarde">Moutarde</option>
+                        <option value="Macaroni">Macaroni</option>
+                        <option value="Moselle">Moselle</option>
+                        <option value="Mandala">Mandala</option>
+                        <option value="Margueritte">Margueritte</option>
+                        <option value="Neptune">Neptune</option>
+                        <option value="Papaye">Papaye</option>
+                        <option value="Maite">Maite</option>
+                        <option value="Naza">Naza</option>
+                        <option value="Toblerone">Toblerone</option>
+                        <option value="Rosette">Rosette</option>
+                        <option value="Iris">Iris</option>
+                        <option value="Nairobi">Nairobi</option>
+                        <option value="Mina">Mina</option>
+                        <option value="Raymonde">Raymonde</option>
+                        <option value="Otaria">Otaria</option>
+                        <option value="Sauterelle">Sauterelle</option>
+                        <option value="Sidonie">Sidonie</option>
+                        <option value="Prune">Prune</option>
+                        <option value="Bleuet">Bleuet</option>
+                        <option value="Noire">Noire</option>
+                        <option value="Magma">Magma</option>
+                        <option value="Sky">Sky</option>
+                        <option value="Fiesta">Fiesta</option>
+                        <option value="Neda">Neda</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Nouille">Nouille</option>
+                        <option value="Lila">Lila</option>
+                        <option value="Nina">Nina</option>
+                        <option value="Nathalia">Nathalia</option>
+                        <option value="Tonnerre">Tonnerre</option>
+                        <option value="Lavande">Lavande</option>
+                        <option value="Naya">Naya</option>
+                        <option value="Nilla">Nilla</option>
+                        <option value="Hélène">Hélène</option>
+                        <option value="Unknow">Unknown</option>
                     </select><br><br>
                 </div>
                 
