@@ -3,15 +3,15 @@
 
     <head>
         <meta charset="utf-8">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-        <title>Un graphique avec des velages</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
-        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>   <!--se connecte a chart.js via internet --> 
+        <title>Un graphique avec des velages</title>    
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">   <!-- se connecte au css -->
+        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>      <!-- affiche une petite image dans l'onglet de la page-->
     </head>
 
     <body> 
-        <h2><u>Graphique des velages {{ annee }} ({{ velage }} naissances)</u></h2>
-        <form action = "{{url_for("velage")}}">
+        <h2><u>Graphique des velages {{ annee }} ({{ velage }} naissances)</u></h2>     <!-- affiche dans une phrase de quelle année le grpahs montre les données et montre le nombre total de velage au cours de la periode-->
+        <form action = "{{url_for("velage")}}">     <!-- bouton retour qui redirige vers la page "menu-velage.html -->
             <input class="retour" type="submit" value="Retour">
         </form>
 
@@ -19,19 +19,19 @@
         <br><br><br><br>
         
         <div style="text-align: center;"> <!-- Deuxième Canvas: graphe en style bar -->
-            <canvas id="V_graph" width="900" height="600"></canvas>
+            <canvas id="V_graph" width="900" height="600"></canvas>             <!-- defini le canvas et ses dimensions pour le graph-->
         </div>
 
         <script>
             new Chart("V_graph", {
             type: 'bar',
             data: {
-                labels: {{ mois_annee | safe }},
+                labels: {{ mois_annee | safe }},    <!-- récupere les données de l'axe des abscisses -->
                 datasets: [{
                     label: 'Nombre de velage',
-                    data: {{ nombre_velage | safe }},
+                    data: {{ nombre_velage | safe }},  <!-- récupere les données de l'axe des ordonées -->
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',      <!-- on defini les couleurs du graph-->
                     ],
                     borderColor: [
                         'rgb(255, 99, 132)',
@@ -40,7 +40,7 @@
                 }]
             },
             options: {
-                responsive : false
+                responsive : false      <!-- le graph aura une taille fixe -->
             }
         }
             )
