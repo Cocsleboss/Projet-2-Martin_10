@@ -23,7 +23,7 @@ def GraphV():
         if mois == "None":      
             mois = "__"         #si l'utilisateur n'a pas choisit de mois on le change en caractere non specifié pour la requete SQL
         if famille == "None":   #si l'utilisateur n'a pas choisit de famille on execute cette requete SQL
-            truc = f"SELECT date FROM velages WHERE date LIKE '__/{mois}/{annee}'"
+            truc = f"SELECT date FROM velages WHERE date LIKE '__/{mois}/{annee}'". # la requete SQL vaas recuperer toutes les données correspondant à la demande de l'utilisateur dans la database
             res = cursor.execute(truc)
             res = res.fetchall()
             for i in range(len(res)):       #on change la liste de tuples en un liste de dates
@@ -46,7 +46,7 @@ def GraphV():
             return render_template("velages.html", mois_annee = labels, nombre_velage = data, mois = mois, annee = annee, velage = nombre) #redirige vers "velages.html" avec toutes les variables definies"
             
         
-        if famille != "None":   #si l'utilisateur a choisit une famille on execute cette requete SQL
+        if famille != "None":   #si l'utilisateur a choisit une famille on execute cette requete SQL (la requete SQL vaas recuperer toutes les données correspondant à la demande de l'utilisateur dans la database)
             truc = f"SELECT date FROM velages WHERE date LIKE '%%/{mois}/{annee}' AND id IN(SELECT velage_id FROM animaux_velages WHERE animal_id IN (SELECT id FROM animaux WHERE famille_id = (SELECT id FROM familles WHERE nom == '{famille}')))"
             res = cursor.execute(truc)
             res = res.fetchall()
@@ -85,7 +85,7 @@ def GraphPL():
         if mois == "None":      # si l'utilisateur ne choisit pas de mois on le change en un caractere non specifié pour la requete SQL
             mois = "__"
         if famille == "None":
-            truc = f"SELECT date FROM velages WHERE date LIKE '__/{mois}/{annee}'"
+            truc = f"SELECT date FROM velages WHERE date LIKE '__/{mois}/{annee}'"  # la requete SQL vaas recuperer toutes les données correspondant à la demande de l'utilisateur dans la database
             res = cursor.execute(truc)
             res = res.fetchall()
             nombre = len(res)
@@ -102,7 +102,7 @@ def GraphPL():
             return render_template("pleine-lune.html", vache_naissance = [pl, npl], mois = mois, annee = annee, velage = nombre) 
             
         
-        if famille != "None":
+        if famille != "None":   # la requete SQL vaas recuperer toutes les données correspondant à la demande de l'utilisateur dans la database
             truc = f"SELECT date FROM velages WHERE date LIKE '%%/{mois}/{annee}' AND id IN(SELECT velage_id FROM animaux_velages WHERE animal_id IN (SELECT id FROM animaux WHERE famille_id = (SELECT id FROM familles WHERE nom == '{famille}')))"
             res = cursor.execute(truc)
             res = res.fetchall()
