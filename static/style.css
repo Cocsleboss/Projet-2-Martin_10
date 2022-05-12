@@ -8,14 +8,14 @@ h1  {
     text-transform: uppercase; 
     letter-spacing: 2px;
     font-size: 3rem;
-    color: brown;
+    color: rgb(35, 19, 19);
     text-align: center;
     font-weight: extra bold;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 0.2px;
+    top: 10px;
     }
   
 h2  {
