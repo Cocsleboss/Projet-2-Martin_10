@@ -16,7 +16,7 @@
             <div id="wrap">
                 <ul class="menu">
                     <li>
-                        <a href="{{ url_for('login')}}">Home</a>
+                        <a href="{{ url_for('login')}}">Home</a>    <!-- ce sont quattres lien qui renvoient vers les différents menus-->
                     </li>
                     <li>
                         <a href="{{ url_for('velage')}}" target="_blank">Vêlages</a>   
@@ -33,7 +33,9 @@
     
     
     <!--Menu au dessus de la page-->
-        <form action="{{url_for("GraphV")}}" method="POST" class="form-example">
+            
+        <!-- lorsque l'utilisateur cliquera sur le bouton submit cela revoira l'utilisateur dans la fonction "GraphV qui récupera les données du form -->
+        <form action="{{url_for("GraphV")}}" method="POST" class="form-example"> 
             <div class="case">
                 <div class="Année">
                     <label for="Année">Choisissez une année:</label>
@@ -46,7 +48,7 @@
                 <div class="famille">
                     <label for="famille">Choisissez une mois (facultattif):</label>
     
-                    <select name="mois" id="mois">
+                    <select name="mois" id="mois">  <!-- volet d'option avec tout les mois -->
                         <option value="None">Aucun</option>
                         <option value="01">Janvier</option>
                         <option value="02">Fevrier</option>
@@ -67,7 +69,7 @@
                 <div class="famille">
                     <label for="famille">Choisissez une famille (facultattif):</label>
     
-                    <select name="famille" id="famille">
+                    <select name="famille" id="famille">    <!-- volet d'option avec tout les noms de famille -->
                         <option value="None">Aucun</option>
                         <option value="Galak">Galak</option>
                         <option value="Réglisse">Réglisse</option>
@@ -240,7 +242,7 @@
                 
             </div>
             <div class="entrer">
-                <button type="submit" onclick="velages.html" >Afficher</button>
+                <button type="submit" onclick="velages.html" >Afficher</button>     <!-- bouton submit pour qui va renvoyer à la fonciton "GraphV"-->
             </div>           
         </form>
     </body>
