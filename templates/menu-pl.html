@@ -5,8 +5,8 @@
     <head>
         <meta Charest="utf-8">
         <title>Pleine Lune</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
-        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">      <!-- se connecte au fichier css-->
+        <link rel="icon" href="{{ url_for('static', filename='vache.ico')}}"/>      <!-- affiche une petite icon dans l'onglet -->
     </head>
 
     <body>
@@ -14,7 +14,7 @@
     <!--Menu au dessus de la page-->
         <form action="">
             <div id="wrap">
-                <ul class="menu">
+                <ul class="menu">       <!-- liens qui renvoient vers les différents menus -->
                     <li>
                         <a href="{{ url_for('login')}}">Home</a>
                     </li>
@@ -32,10 +32,11 @@
      
 
     <!--Critère d'affichage-->
-        <form action="{{url_for('GraphPL')}}" method="POST" class="form-example">
+        <!-- lorsque l'utilisateur cliquera sur le bouton sumbit il sera renvoyer dans la fonction "GraphPL" qui récuperera les donnée de entrées par l'utilisateur -->
+        <form action="{{url_for('GraphPL')}}" method="POST" class="form-example">       
             <div class="case">
                 <div class="Année">
-                    <label for="Année">Choisissez une année:</label>
+                    <label for="Année">Choisissez une année:</label>    <!-- demande a l'utilisateur de rentrer une année entre 1990 et 2000 (les dates de debut et de fin de la database)-->
                     
                     <input type="number" id="an" name="an" 
                     value="2000"
@@ -44,7 +45,7 @@
                 </div>    
                 
                 <div class=""Mois>
-                    <label for="mois">Choisissez un mois:</label>
+                    <label for="mois">Choisissez un mois:</label>   <!-- volet d'options avec tout les mois-->
                     <select name="mois" id="mois">
                         <option value="None">Aucun</option>
                         <option value="01">Janvier</option>
@@ -63,7 +64,7 @@
                 </div>
                     
                 <div class="famille">
-                    <label for="famille">Choisissez une famille (facultattif):</label>
+                    <label for="famille">Choisissez une famille (facultattif):</label>      <!-- volet d'option avec tout les noms de familles-->
                     <select name="famille" id="famille">
                         <option value="None">Aucun</option>
                         <option value="Galak">Galak</option>
@@ -236,7 +237,7 @@
                 
             </div>
             <div class="entrer">
-                <button type="submit"  onclick="pleine-lunes.html">Afficher</button>
+                <button type="submit"  onclick="pleine-lunes.html">Afficher</button>    <!-- bouton submit qui va renvoyer dans la fonction "GraphPL" -->
             </div>
         </form>               
                 
