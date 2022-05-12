@@ -23,7 +23,7 @@ def GraphV():
         if mois == "None":      
             mois = "__"         #si l'utilisateur n'a pas choisit de mois on le change en caractere non specifié pour la requete SQL
         if famille == "None":   #si l'utilisateur n'a pas choisit de famille on execute cette requete SQL
-            truc = f"SELECT date FROM velages WHERE date LIKE '__/{mois}/{annee}'". # la requete SQL vaas recuperer toutes les données correspondant à la demande de l'utilisateur dans la database
+            truc = f"SELECT date FROM velages WHERE date LIKE '__/{mois}/{annee}'"   # la requete SQL vaas recuperer toutes les données correspondant à la demande de l'utilisateur dans la database
             res = cursor.execute(truc)
             res = res.fetchall()
             for i in range(len(res)):       #on change la liste de tuples en un liste de dates
